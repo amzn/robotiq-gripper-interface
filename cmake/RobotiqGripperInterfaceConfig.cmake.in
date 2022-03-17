@@ -1,0 +1,8 @@
+@PACKAGE_INIT@
+
+include(CMakeFindDependencyMacro)
+
+# Dependencies (same syntax as find_package)
+find_dependency(Boost 1.65.1 COMPONENTS system)
+
+include("${CMAKE_CURRENT_LIST_DIR}/RobotiqGripperInterfaceTargets.cmake")

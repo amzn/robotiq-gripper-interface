@@ -1,0 +1,51 @@
+# temp & build folders
+DerivedData
+obj
+build
+html
+bin
+lib
+*.dir
+*.tmp
+
+# Mac files
+.DS_Store
+
+# Python files
+__pycache__
+
+# IDE
+.vscode
+
+# Jupyter notebooks
+.ipynb_checkpoints
+
+# Compiled objects
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled headers
+*.gch
+*.pch
+
+# Dynamic libraries
+# *.so  # This is commented to commit the shlib needed for IK unit tests
+*.dylib
+*.dll
+*.pyd
+
+# Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Exectuables
+*.exe
+*.out
+*.app
+
+# Data
+*.csv
