@@ -18,6 +18,11 @@
 
 namespace robotiq {
 
+/*
+ * The Robotiq manual is available here:
+ * https://assets.robotiq.com/website-assets/support_documents/document/2F-85_2F-140_Instruction_Manual_e-Series_PDF_20190206.pdf
+ */
+
 /** Basic status based on gACT, gGTO, and gSTA bits defined in 4.4 of the manual */
 enum BasicStatus {
   NOT_CONNECTED, /** Returned if the gripper is not connected */
@@ -81,12 +86,12 @@ struct DetailedStatus {
 
 /** Holds the gripper feedback */
 struct GripperFeedback {
-  double commanded_position{0};       /** Range determined by alpha, beta */
-  double position{0};                 /** Range determined by alpha, beta */
-  double current{0};                  /** Between 0 (min) and 1 (max) */
-  uint8_t raw_commanded_position{0};  /** Between 0 (open) and 255 (closed) */
-  uint8_t raw_position{0};            /** Between 0 (open) and 255 (closed) */
-  DetailedStatus status;              /** Detailed status returned by the gripper*/
+  double commanded_position{0};      /** Range determined by alpha, beta */
+  double position{0};                /** Range determined by alpha, beta */
+  double current{0};                 /** Between 0 (min) and 1 (max) */
+  uint8_t raw_commanded_position{0}; /** Between 0 (open) and 255 (closed) */
+  uint8_t raw_position{0};           /** Between 0 (open) and 255 (closed) */
+  DetailedStatus status;             /** Detailed status returned by the gripper*/
 };
 
 }  // namespace robotiq

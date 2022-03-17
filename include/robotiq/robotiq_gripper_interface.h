@@ -14,10 +14,10 @@
 
 #pragma once
 
+#include <cstdint>
 #include <memory>
 #include <string>
 #include <vector>
-#include <cstdint>
 
 #include "robotiq/constants.h"
 #include "robotiq/types.h"
@@ -25,7 +25,8 @@
 namespace robotiq {
 
 /**
- * @brief This class is the simplified interface to the Robotiq Adaptive gripper.
+ * @brief This class is the simplified interface to the Robotiq Adaptive gripper.  The
+ * Robotiq manual is available here:
  * https://assets.robotiq.com/website-assets/support_documents/document/2F-85_2F-140_Instruction_Manual_e-Series_PDF_20190206.pdf
  *
  * Note that the class was tested with a 2F-85 2-finger gripper, Robotiq pinout to RS-485
@@ -45,10 +46,10 @@ class RobotiqGripperInterface {
    * with RS-485.  Note that the default port value assumes a Linux box with a serial to
    * usb converter.
    *
-   * The gripper can be accessed indepdently on a Windows machine using the Robotiq User
+   * The gripper can be accessed independently on a Windows machine using the Robotiq User
    * Interface application.
    *
-   * Effect of scale factors:  
+   * Effect of scale factors:
    *   $$y = (alpha / 255) * u + beta$$
    *   $$u = (255 / alpha) * (y - beta)$$
    * where:
@@ -67,8 +68,7 @@ class RobotiqGripperInterface {
    * @param[in] scale_beta Linear zero crossing factor for position scaling
    * @return True if succeeded.
    */
-  bool connect(const std::string& port = DEFAULT_PORT, 
-               std::size_t baud = DEFAULT_BAUD,
+  bool connect(const std::string& port = DEFAULT_PORT, std::size_t baud = DEFAULT_BAUD,
                double scale_alpha = DEFAULT_SCALE_ALPHA,
                double scale_beta = DEFAULT_SCALE_BETA);
 
